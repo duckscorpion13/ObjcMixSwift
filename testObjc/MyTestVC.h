@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MyTestVC : UIViewController
 
+@property (nonatomic,retain ) NSLayoutConstraint  *m_topConstraint;
+@property(nonatomic,assign) BOOL m_isHiddenBar;
 
 @end
 

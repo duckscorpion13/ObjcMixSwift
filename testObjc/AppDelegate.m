@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "MyTestVC.h"
+#import "testObjc-Swift.h"//Objc使用Swift混編需加入 <ProjectName>-Swfit.h
 
 @interface AppDelegate ()
 
@@ -17,6 +19,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+   
+    WkWebVC *vc = [[WkWebVC alloc] init];
+    vc.view.backgroundColor = UIColor.blueColor;
+    
+    
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController: vc];
+    navi.view.backgroundColor = UIColor.clearColor;
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window setRootViewController: navi];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
